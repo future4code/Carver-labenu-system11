@@ -8,6 +8,10 @@ export const getClass = async(req: Request, res: Response)=>{
         .where('module', '>', 0)
         res.status(200).send(getThen)
     }catch(error:any){
-        res.status(400).send({message: error.message})
+        if(typeof error === 'string'){
+            res.send(error)
+        }else{
+            res.status(500).send({message: error.message})
+        }
     }
 }

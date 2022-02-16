@@ -1,11 +1,17 @@
 import express, { Express, Request, Response } from "express";
 import cors from "cors";
 import { AddressInfo } from "net";
-import connection from "./connection/connection"
+import { getClass } from "./endpoints/labeClass/getClass";
 
 const app: Express = express();
 app.use(express.json());
 app.use(cors());
+
+
+
+
+app.get('/class', getClass)
+
 
 const server = app.listen(process.env.PORT || 3003, () => {
  if (server) {

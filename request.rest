@@ -1,0 +1,26 @@
+### Criar Classe
+POST http://localhost:3003/class
+Content-type: application/json
+
+{
+    "name": "teste",
+    "module": "0"
+}
+
+### Criar Estudante
+POST http://localhost:3003/student
+Content-type: application/json
+
+{
+    "name": "Renata",
+    "email": "renata@gmail.com",
+    "birth_date": "1993-04-18",
+    "class_id": 2
+}
+
+### Busca de estudante por nome
+GET http://localhost:3003/student?search=leo
+Content-type: application/json
+
+
+

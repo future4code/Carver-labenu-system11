@@ -2,6 +2,9 @@ import { getEstudantes } from './endpoint/getEstudantes';
 import express, { Express, Request, Response } from "express";
 import cors from "cors";
 import { AddressInfo } from "net";
+import { getClass } from "./endpoints/labeClass/getClass";
+import { changeClass } from "./endpoints/labeClass/changeClass";
+
 
 const app: Express = express();
 app.use(express.json());
@@ -16,4 +19,6 @@ const server = app.listen(process.env.PORT || 3003, () => {
  }
 });
 
-app.get("/estundantes/:class",getEstudantes)
+app.get("/estundant/:class", getEstudantes)
+app.get('/class', getClass)
+app.put('/class', changeClass)

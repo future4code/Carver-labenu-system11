@@ -1,3 +1,4 @@
+import { getEstudantes } from './endpoint/getEstudantes';
 import express, { Express, Request, Response } from "express";
 import cors from "cors";
 import { AddressInfo } from "net";
@@ -15,4 +16,4 @@ const server = app.listen(process.env.PORT || 3003, () => {
  }
 });
 
-app.get("/estundantes",)
+app.get("/estundantes/:class",getEstudantes)

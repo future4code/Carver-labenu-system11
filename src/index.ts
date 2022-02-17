@@ -1,7 +1,6 @@
 import express, { Express, Request, Response } from "express";
 import cors from "cors";
 import { AddressInfo } from "net";
-import connection from "./connection/connection"
 
 const app: Express = express();
 app.use(express.json());
@@ -15,3 +14,5 @@ const server = app.listen(process.env.PORT || 3003, () => {
   console.error(`Failure upon starting server.`);
  }
 });
+
+app.get("/estundantes",)

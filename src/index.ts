@@ -5,6 +5,8 @@ import { getClass } from "./endpoints/labeClass/getClass";
 import { changeClass } from "./endpoints/labeClass/changeClass";
 // import { StudentController } from "./controller/StudentController";
 // import { ClassController } from "./controller/ClassController";
+import { getTeachers } from "./endpoints/labeTeachers/getTeacher";
+
 
 const app: Express = express();
 app.use(express.json());
@@ -13,6 +15,7 @@ app.use(cors());
 
 app.get('/class', getClass)
 app.put('/class', changeClass)
+app.get('/teachers', getTeachers)
 
 // const studentController = new StudentController()
 // const classController = new ClassController()

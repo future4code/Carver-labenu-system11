@@ -5,7 +5,7 @@
     
 //     public async createClass(name:string, module:string):Promise<void> {
 //         try{
-//             await this.connection
+//             await this.getConnection()
 //             .insert({
 //                 name: name,
 //                 module: module

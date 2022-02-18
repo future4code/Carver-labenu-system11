@@ -1,9 +1,9 @@
 // import { BaseDatabase } from '../connection/connection';
 
-// export class StudentDatabase extends BaseDatabase {
-//     private static TABLE_NAME = "labeSystem_estudants"
+// export class TeacherDatabase extends BaseDatabase {
+//     private static TABLE_NAME = "labeSystem_teacher"
     
-//     public async createStudent(name:string, email:string, birth_date:string, class_id:number):Promise<void> {
+//     public async createTeacher(name:string, email:string, birth_date:string, class_id:number):Promise<void> {
 //         try{
 //             await this.getConnection()
 //             .insert({
@@ -12,18 +12,18 @@
 //                 birth_date: birth_date,
 //                 class_id: class_id
 //             })
-//             .into(StudentDatabase.TABLE_NAME)
+//             .into(TeacherDatabase.TABLE_NAME)
 //         }
 //         catch(error:any){
 //             throw new Error(error.sqlMessage || error.message);
 //         }
 //     }
 
-//     public async getStudentByName(search:any):Promise<any> {
+//     public async getTeacherByName(search:any):Promise<any> {
 //         try{
 //             const result = await this.getConnection()
 //             .select('id','name')
-//             .from(StudentDatabase.TABLE_NAME)
+//             .from(TeacherDatabase.TABLE_NAME)
 //             .whereILike('name', `%${search}%`)
 //             return result;
 //         }

@@ -15,12 +15,29 @@ Content-type: application/json
     "name": "Renata",
     "email": "renata@gmail.com",
     "birth_date": "1993-04-18",
+    "class_id": 3
+}
+
+### Criar Professor
+POST http://localhost:3003/teacher
+Content-type: application/json
+
+{
+    "name": "Bruno",
+    "email": "bruno@gmail.com",
+    "birth_date": "1989-01-01",
     "class_id": 2
 }
 
 ### Busca de estudante por nome
-GET http://localhost:3003/student?search=leo
+GET http://localhost:3003/student?search=mari
 Content-type: application/json
+
+
+### Busca de professor por nome
+GET http://localhost:3003/teacher?search=yuzo
+Content-type: application/json
+
 
 
 

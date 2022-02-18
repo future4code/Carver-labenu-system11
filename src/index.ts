@@ -1,4 +1,4 @@
-import { getEstudantes } from './endpoint/getEstudantes';
+import { getEstudant } from './endpoints/getEstudant/getEstudant';
 import express, { Express, Request, Response } from "express";
 import cors from "cors";
 import { AddressInfo } from "net";
@@ -19,6 +19,6 @@ const server = app.listen(process.env.PORT || 3003, () => {
  }
 });
 
-app.get("/estundant/:class", getEstudantes)
+app.get("/estudant/:class", getEstudant)
 app.get('/class', getClass)
 app.put('/class', changeClass)

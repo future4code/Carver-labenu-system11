@@ -1,3 +1,4 @@
+import { getEstudant } from './endpoints/getEstudant/getEstudant';
 import express, { Express, Request, Response } from "express";
 import cors from "cors";
 import { AddressInfo } from "net";
@@ -6,14 +7,16 @@ import { changeClass } from "./endpoints/labeClass/changeClass";
 // import { StudentController } from "./controller/StudentController";
 // import { ClassController } from "./controller/ClassController";
 // import { TeacherController } from "./controller/TeacherController";
+import { getTeachers } from "./endpoints/labeTeachers/getTeacher";
 
 const app: Express = express();
 app.use(express.json());
 app.use(cors());
 
-
+app.get("/estudant/:class", getEstudant)
 app.get('/class', getClass)
 app.put('/class', changeClass)
+app.get('/teachers', getTeachers)
 
 // const studentController = new StudentController()
 // const classController = new ClassController()

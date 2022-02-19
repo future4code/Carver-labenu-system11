@@ -4,7 +4,7 @@ export type labeClass = {
     module: string
 }
 
-export type estudant = {
+export type studant = {
  id:number,
  name:string,
  email:string,

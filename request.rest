@@ -7,15 +7,39 @@ Content-type: application/json
     "module": "0"
 }
 
+### Buscar todas as classes ativas
+GET http://localhost:3003/classes
+Content-type: application/json
+
+### Alterar módulo da classe
+PUT http://localhost:3003/class/1/edit
+Content-type: application/json
+
+{
+    "module": 2
+}
+
 ### Criar Estudante
 POST http://localhost:3003/student
 Content-type: application/json
 
 {
-    "name": "Renata",
-    "email": "renata@gmail.com",
-    "birth_date": "1993-04-18",
-    "class_id": 3
+    "name": "Gisele",
+    "email": "gisele@gmail.com",
+    "birth_date": "1989-01-03",
+    "class_id": 4
+}
+
+### Busca de estudante por nome
+GET http://localhost:3003/student?search=leo
+Content-type: application/json
+
+### Trocar estudante de classe
+PUT http://localhost:3003/student/3/edit
+Content-type: application/json
+
+{
+    "class_id": 1
 }
 
 ### Criar Professor
@@ -29,15 +53,32 @@ Content-type: application/json
     "class_id": 2
 }
 
-### Busca de estudante por nome
-GET http://localhost:3003/student?search=mari
-Content-type: application/json
-
-
 ### Busca de professor por nome
 GET http://localhost:3003/teacher?search=yuzo
 Content-type: application/json
 
+### Buscar todos os professores
+GET http://localhost:3003/teachers
+Content-type: application/json
 
+### Trocar professor de classe
+PUT http://localhost:3003/teacher/2/edit
+Content-type: application/json
+
+{
+    "class_id": 3
+}
+
+### Buscar professores e estudantes por classe
+GET http://localhost:3003/class/4
+Content-type: application/json
+
+### Buscar estudantes por hobby
+GET http://localhost:3003/hobby/6
+Content-type: application/json
+
+### Buscar professores por skill
+GET http://localhost:3003/skill/3
+Content-type: application/json
 
 

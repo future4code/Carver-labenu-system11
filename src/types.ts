@@ -1,21 +1,21 @@
 export type labeClass = {
-    id: string,
+    id: number,
     name: string,
     module: string
 }
 
-export type studant = {
- id:number,
- name:string,
- email:string,
- birth_date:string,
- class_id:number
+export type LabeStudent = {
+    id:number,
+    name:string,
+    email:string,
+    birth_date:string,
+    class_id:number
 }
 
-export type Teacher = {
-    id: string,
+export type LabeTeacher = {
+    id: number,
     nome: string,
     email: string,
     data_nasc: string,
-    turma_id: string
+    turma_id: number
  }

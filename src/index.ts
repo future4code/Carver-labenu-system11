@@ -1,36 +1,30 @@
-import { changeTeacherClass } from './endpoints/changeTeacherClass/changeTeacherClass';
-import { changeStudantClass } from './endpoints/changeStudantClass/changeStudantClass';
-import { getStudant } from './endpoints/getStudant/getStudant';
-import express, { Express, Request, Response } from "express";
+import express, { Express } from "express";
 import cors from "cors";
 import { AddressInfo } from "net";
-import { getClass } from "./endpoints/labeClass/getClass";
-import { changeClass } from "./endpoints/labeClass/changeClass";
-// import { StudentController } from "./controller/StudentController";
-// import { ClassController } from "./controller/ClassController";
-// import { TeacherController } from "./controller/TeacherController";
-import { getTeachers } from "./endpoints/labeTeachers/getTeacher";
+import { StudentController } from "./controller/StudentController";
+import { ClassController } from "./controller/ClassController";
+import { TeacherController } from "./controller/TeacherController";
 
 const app: Express = express();
 app.use(express.json());
 app.use(cors());
 
-app.put('/teacher', changeTeacherClass)
-app.put("/studant", changeStudantClass)
-app.get("/studant/:class", getStudant)
-app.get('/class', getClass)
-app.put('/class', changeClass)
-app.get('/teachers', getTeachers)
-
-// const studentController = new StudentController()
-// const classController = new ClassController()
-// const teacherController = new TeacherController()
-// app.post('/class', classController.createClass)
-// app.post('/student', studentController.createStudent)
-// app.get('/student', studentController.getStudentByName)
-// app.post('/teacher', teacherController.createTeacher)
-// app.get('/teacher', teacherController.getTeacherByName)
-
+const studentController = new StudentController()
+const classController = new ClassController()
+const teacherController = new TeacherController()
+app.post('/class', classController.createClass)
+app.post('/student', studentController.createStudent)
+app.post('/teacher', teacherController.createTeacher)
+app.get('/student', studentController.getStudentByName)
+app.get('/teacher', teacherController.getTeacherByName)
+app.put('/student/:id/edit', studentController.changeStudentClass)
+app.put('/teacher/:id/edit', teacherController.changeTeacherClass)
+app.get('/class/:class_id', classController.getPeopleByClass)
+app.put('/class/:id/edit', classController.changeModule)
+app.get('/classes', classController.getAllClasses)
+app.get('/teachers', teacherController.getAllTeachers)
+app.get('/hobby/:hobby_id', classController.getStudentByHobby)
+app.get('/skill/:skill_id', classController.getTeacherBySkill)
 
 const server = app.listen(process.env.PORT || 3003, () => {
  if (server) {

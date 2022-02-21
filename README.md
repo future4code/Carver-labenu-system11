@@ -20,14 +20,28 @@ Ele deve possuir, ao menos, as 3 entidades importantes:
 
 As funcionalidades básicas são:
 
+→ Criar turma
+
+→ Buscar todas as turmas ativas
+
+→ Alterar módulo da turma
+
 → Criar estudante;
 
-→ Criar docente;
+→ Buscar estudante por nome
 
-→ Criar turma;
+→ Alterar turma do estudante
 
-→ Adicionar estudante na turma;
+→ Criar docente
 
-→ Adicionar docente na turma;
+→ Buscar docente por nome
 
-→ Pegar a idade de algum estudante a partir do id
+→ Buscar todos os docentes
+
+→ Alterar turma do docente
+
+→ Buscar estudantes e docentes por turma
+
+→ Buscar estudantes por hobby
+
+→ Buscar professores por habilidades
